@@ -56,4 +56,26 @@ flowchart LR
     end
         
 ```
+
+```mermaid
+flowchart LR
+    L000[Group Theory] --> R000[Group]
+    subgraph L0[Syntax]
+        subgraph L00[Formal Language]
+            subgraph L000[Counter Program]
+               A["switch action <br/> #nbsp; case INCREMENT: <br/> #nbsp; #nbsp; state = state + 1 <br/> #nbsp; case DECREMENT: <br/> #nbsp; #nbsp; state = state - 1"] 
+               style A text-align:left
+            end
+        end
+    end
+    subgraph R0[Semantics]
+        subgraph R00[Category]
+            subgraph R000[Counter]
+                direction LR
+                R00000[-3] --> |+1| R00001[-2] --> |+1| R00002[-1] --> |+1| R00003[0] --> |+1| R00004[1] --> |+1| R00005[2] --> |+1| R00006[3]
+                R00006[3] --> |-1| R00005[2] --> |-1| R00004[1] --> |-1| R00003[0] --> |-1| R00002[-1] --> |-1| R00001[-2] --> |-1| R00000[-3]
+            end
+        end
+    end
+```
     
