@@ -291,3 +291,18 @@ function longestIncreasingSubsequence(arr) {
 ```
 
 ### Greedy x Binary Search
+
+```js
+function longestIncreasingSubsequence(arr) {
+  let pileTop = new Array(arr.length).fill(Infinity)
+  let pileLength = new Array(arr.length).fill(0)
+
+  for (let i = 0; i < arr.length; i++) {
+    let j = binarySearch(pileLength, arr[i])
+    pileTop[j] = arr[i]
+    pileLength[j] += 1
+  }
+  
+  return Math.max(...pileLength)
+}
+```
