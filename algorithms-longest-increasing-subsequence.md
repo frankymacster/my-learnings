@@ -28,8 +28,6 @@ stateDiagram-v2
 
     BC2 --> BD4
 
-
-
     AA --> AD1
     AA --> AC1
     AA --> AB
@@ -68,6 +66,25 @@ function longestIncreasingSubsequence(arr) {
 }
 ```
 
+## Backtrack
+
+### 
+
+```mermaid
+
+stateDiagram-v2
+    []
+    [] --> [arr[0]]
+    [] --> [arr[1]]
+    [] --> [arr[2]]
+    
+    [arr[0]] --> [arr[0],arr[1]]
+    [arr[0]] --> [arr[0],arr[2]]
+
+    [arr[1]] --> [arr[1],arr[2]]
+
+    [arr[0],arr[1]] --> [arr[0],arr[1],arr[2]]
+```
 
 ### Include / Exclude
 
@@ -258,3 +275,7 @@ function longestIncreasingSubsequence(arr) {
   return max;
 }
 ```
+## Greedy
+
+
+### Greedy x Binary Search
