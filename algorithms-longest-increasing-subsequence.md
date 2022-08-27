@@ -68,6 +68,67 @@ function longestIncreasingSubsequence(arr) {
 }
 ```
 
+
+### Include / Exclude
+
+```mermaid
+
+stateDiagram-v2
+    A: []
+    B: []
+    C: [arr[0]]
+    D: []
+    E: [arr[0]]
+    F: [arr[0], arr[1]]
+    G: [arr[1]]
+    H: []
+    I: [arr[2]]
+    J: [arr[1]]
+    K: [arr[1], arr[2]]
+    L: [arr[0]]
+    M: [arr[0], arr[2]]
+    O: [arr[0], arr[1]]
+    P: [arr[0], arr[1], arr[2]]
+
+    A --> B
+    A --> C
+    B --> D
+    B --> G
+    
+    C --> E
+    C --> F
+
+    D --> H
+    D --> I
+
+    G --> J
+    G --> K
+
+    E --> L
+    E --> M
+
+    F --> O
+    F --> P
+
+```
+
+```js
+function longestIncreasingSubsequence(int[] arr, int i, int n, int prev) {
+  if (i === n) {
+    return 0;
+  }
+
+  const excl = longestIncreasingSubsequence(arr, i + 1, n, prev);
+
+  let incl = 0;
+  if (arr[i] > prev) {
+    incl = 1 + longestIncreasingSubsequence(arr, i + 1, n, arr[i]);
+  }
+
+  return Math.max(incl, excl);
+}
+```
+
 ## Dynamic Programming
 
 ### Memoization
