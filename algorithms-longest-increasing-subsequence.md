@@ -258,7 +258,7 @@ function longestIncreasingSubsequence(arr) {
   let subproblemTable = new Array(arr.length).fill(0);
   let max = 0;
 
-  for (let i = 1; i < n; i++) {
+  for (let i = 1; i < arr.length; i++) {
     for (let j = 0; j < i; j++) {
       if (arr[i] > arr[j] && subproblemTable[i] < subproblemTable[j] + 1) {
         subproblemTable[i] = subproblemTable[j] + 1;
