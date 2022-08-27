@@ -266,13 +266,7 @@ function longestIncreasingSubsequence(arr) {
     }
   }
 
-  for (i = 0; i < n; i++) {
-    if (max < subproblemTable[i]) {
-      max = subproblemTable[i]; 
-    }
-  }
-
-  return max;
+  return Math.max(...subproblemTable);
 }
 ```
 ## Greedy
