@@ -1,3 +1,5 @@
+### Data flow graph
+
 ```mermaid
 flowchart TB
     subgraph user interface
