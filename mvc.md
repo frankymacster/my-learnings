@@ -29,6 +29,8 @@ flowchart TB
 
 ```mermaid
 sequenceDiagram
+    participant controller.store
+    participant controller.state transition
     loop
         alt
             side-effect.view->>controller.state transition: event
