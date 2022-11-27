@@ -1,3 +1,10 @@
+### Instance graph
+
+```mermaid
+graph BT
+    A[state] -->|is instance of| B[model]
+```
+
 ### Data flow graph
 
 ```mermaid
