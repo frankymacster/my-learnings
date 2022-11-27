@@ -2,10 +2,8 @@
 
 ```mermaid
 flowchart TB
-    subgraph user interface
-        B[event listeners]
-        view
-    end
+    view
+    C[non-user facing side-effect]
 
     subgraph controller
         store
@@ -13,7 +11,9 @@ flowchart TB
     end
 
     store -->|current model| A
-    B -->|event| A[state transition]
+    view -->|event| A[state transition]
     A -->|updated model| view
     A -->|updated model| store
+    A -->|updated model| C
+    C -->|event| A
 ```
